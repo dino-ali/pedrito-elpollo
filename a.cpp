@@ -25,10 +25,12 @@ public:
         v = new T[cap];
     }
     
+    //destructor.
     ~Vector(){
         delete[] v;
     }
     
+    //get "mondá".
     int get_size(){
         return size;
     }
@@ -46,15 +48,25 @@ public:
         }
     }
     
+    //add = push_back, same shit.
     void add (T val){
         if(size == cap){
-            cap = cap*2;
-            w = new T[cap];
-            for (int i; i < cap; i++){
+            int vieja = cap;
+            cout << "incrementando capacidad... " << endl;
+            int nueva = cap*2;
+            w = new T[nueva];
+            cout << "nueva capacidad: " << nueva << endl;
+            for (int i = 0; i < vieja; i++){
                 w[i] = v[i];
-                cout << w[i] <<  " ";
+                //cout << w[i] <<  " ";
             }
             w[size] = val;
+            delete[] v;
+            v = new T[nueva];
+            for (int i = 0; i < nueva; i++){
+                v[i] = w[i];
+                //cout << w[i] <<  " ";
+            }
         }else{
             v[size] = val;
         }
@@ -65,27 +77,37 @@ public:
         for (int i = 0; i < size; i++){
             cout << v[i] << "  ";
         }
+        cout << endl;
     }
-    /*void remove(T a){
-        if (v[a] > v[size]){
-            cout << "la posición sale del vector";
-        }else{
-            
-        }
-    }*/
+    
+    void remove_(T a){
+       if(a < size){
+           for (int i = a; i < size; i++){
+               v[a] = v[a+1];
+           }
+       }else{
+           cout << "la posición sale del vector. " << endl;
+       }
+    }
 };
 
+
 int main() {
-    srand (time(NULL));
+    //srand (time(NULL));
     Vector<int> pata = Vector<int>();
     //cout << pata.get_size() << "\n";
     //cout << pata.get_cap();
-    //int mmm = ;
-    
-    for (int i = 0; i < 10; i++){
-        pata.add(rand()%25+1);
-        
-    }
+    pata.add(1);
+    pata.add(5);
+    pata.add(3);
+    pata.add(5);
+    pata.add(2);
+    pata.add(6);
+    /*pata.add(7);*/
+
     pata.print();
+    
+    /*pata.remove_(9);
+    pata.print();*/
     return 0;
 }
