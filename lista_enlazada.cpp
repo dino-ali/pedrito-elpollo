@@ -82,8 +82,31 @@ public:
         }
     }
     
+    Nodo<T>* get(int i){
+        if(i >= 0 and i < size){
+            int j = 0;
+            Nodo<T>* temp = ptr;
+            while(j < i){
+                temp = temp -> get_next();
+                j++;
+            }
+            return temp;
+        }
+        return nullptr;
+    }
     
+    void insert(T d, int i){
+        Nodo<T>* nodo = new Nodo<T>(d);
+        if (ptr == nullptr or i>size){
+            add(nodo);
+        }else{
+            Nodo<T>* temp = ptr;
+            Nodo<T>* nod = get(i-1);
+            cout << nod;
+        }
+    }
 };
+
 
 // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 int main() {
@@ -95,5 +118,7 @@ int main() {
     }
         
     listita.print();
+    
+    //listita.insert(4, 2);
     return 0;
 }
