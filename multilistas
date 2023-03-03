@@ -1,1 +1,79 @@
+#include <iostream>
+using namespace std;
 
+template <typename T>
+class Nodo_s{
+private:
+    T dato;
+    Nodo_s* nexts;
+public:
+    Nodo_s(T d){
+        dato = d;
+        nexts = nullptr;
+    }
+    
+    ~Nodo_s(){}
+    
+    T get_dato(){
+        return dato;
+    }
+    
+    void set_dato(T d){
+        dato = d;
+    }
+    
+    Nodo_s* get_next(){
+        return next;
+    }
+    
+    void set_next(Nodo_s* n){
+        nexts = n;
+    }
+};
+
+template <typename T>
+class Nodo_p{
+private:
+    T dato;
+    Nodo_p* next;
+    Nodo_s* nexts;
+public:
+    Nodo_p(T d){
+        dato = d;
+        next = nullptr;
+        nexts = nullptr;
+    }
+    
+    ~Nodo_p(){}
+    
+    T get_dato(){
+        return dato;
+    }
+    
+    void set_dato(T d){
+        dato = d;
+    }
+    
+    Nodo_p* get_next(){
+        return next;
+    }
+    
+    void set_pnext(Nodo_p* n){
+        next = n;
+    }
+    
+    Nodo_s* get_next(){
+        return next;
+    }
+    
+    void set_snext(Nodo_s* n){
+        nexts = n;
+    }
+};
+
+
+// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+int main() {
+ 
+    return 0;
+}
