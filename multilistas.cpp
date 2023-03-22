@@ -1,5 +1,6 @@
 #include<iostream>
-using namespace std;
+using namespace std; 
+	
 
 template<typename T, typename T2>
 class NodoS{
