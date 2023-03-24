@@ -2,6 +2,10 @@
 #include <vector>
 using namespace std;
 
+void select_sort(vector<int> &a){
+
+}
+
 void insert_sort(vector<int> &a){
     for(int i = 0; i < a.size()-1; i++){
         
