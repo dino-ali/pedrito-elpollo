@@ -132,7 +132,7 @@ public:
 
 int main() {
     Cola<char> pata(7);
-    //pata.change_cap(10);
+    pata.change_cap(20);
     pata.push('a');
     pata.push('g');
     pata.push('u');
@@ -147,7 +147,7 @@ int main() {
     
     pata.pop();
     pata.print();
-    cout << pata.front() << "   " <<pata.back() << endl;
+    cout << pata.front() << "   " << pata.back() << "   " << pata.get_size()  << "   " << pata.get_cap() << endl;
     cout << pata.empty() << endl;
 
     return 0;
