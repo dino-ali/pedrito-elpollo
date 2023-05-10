@@ -86,22 +86,30 @@ public:
                 Nodo<T>* nuebo = new Nodo<T>(elem);
                 cursor->set_next(nuebo);
                 size++;
+                tail = cursor->get_next();
             }
         }
-        //cout << "verificacion ";
     }
     
     T pop(){
+        T dato;
         if(head == nullptr){
             cout << "esta cola esta vacía, no podés sacarle cosas. " << endl;
         }else{
+            dato = head->get_dato();
             Nodo<T>* cursor = head;
-            for(int i = 0; i < size-1; i++){
-                cursor = cursor->get_next();
-            }
-            tail->set_next(cursor);
+            head = head->get_next();
+            delete cursor; 
         }
-        
+        return dato;
+    }
+    
+    T front(){
+        return head->get_dato();
+    }
+    
+    T back(){
+        return tail->get_dato();
     }
     
     bool empty(){
@@ -114,19 +122,17 @@ public:
     
     void print(){
         Nodo<T>* cursor = head;
-            while(cursor != nullptr){
-                cout << cursor->get_dato();
-                cursor = cursor->get_next();
-            }
+        while(cursor != nullptr){
+            cout << cursor->get_dato();
+            cursor = cursor->get_next();
+        }
+        cout << endl;
     }
-    
 };
 
 int main() {
-    cout << "[21:19, 09/05/2023] samu<3. : Los que debes de hacer el un cursor que busque desde head el penúltimo elemento y luego iguales tail a ese elemento" << endl << "[21:19, 09/05/2023] samu<3. : Y elimine el que estaba antes en tail" << endl;
-    
-    Cola<char> pata;
-    pata.change_cap(10);
+    Cola<char> pata(7);
+    //pata.change_cap(10);
     pata.push('a');
     pata.push('g');
     pata.push('u');
@@ -137,9 +143,12 @@ int main() {
     pata.push('e');
     pata.push('l');
     pata.push('a');
-    cout << pata.empty();
-    
-    
     pata.print();
+    
+    pata.pop();
+    pata.print();
+    cout << pata.front() << "   " <<pata.back() << endl;
+    cout << pata.empty() << endl;
+
     return 0;
 }
