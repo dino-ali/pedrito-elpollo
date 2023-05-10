@@ -100,15 +100,16 @@ public:
             Nodo<T>* cursor = head;
             head = head->get_next();
             delete cursor; 
+            return dato;
         }
-        return dato;
+        
     }
     
-    T front(){
+    T heaad(){
         return head->get_dato();
     }
     
-    T back(){
+    T taiil(){
         return tail->get_dato();
     }
     
@@ -147,7 +148,7 @@ int main() {
     
     pata.pop();
     pata.print();
-    cout << pata.front() << "   " << pata.back() << "   " << pata.get_size()  << "   " << pata.get_cap() << endl;
+    cout << pata.heaad() << "   " << pata.taiil() << "   " << pata.get_size()  << "   " << pata.get_cap() << endl;
     cout << pata.empty() << endl;
 
     return 0;
