@@ -31,7 +31,7 @@ public:
         next = n;
     }
 };
-
+ 
 template <typename T>
 class Cola{
 private:
