@@ -119,11 +119,13 @@ public:
 
 int main() {
     Pila<int> yoongi(11);
+    cout << "pila original: " << endl;
     yoongi.push(12);
     yoongi.push(23);
     yoongi.push(34);
     yoongi.print();
     
+    cout << "   " << endl;
     cout << "nueva pila: " << endl;
     yoongi.pop();
     yoongi.print();
