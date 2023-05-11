@@ -89,7 +89,8 @@ public:
             dato = peak->get_dato();
             Nodo<T>* cursor = peak;
             peak = peak->get_next();
-            delete cursor; 
+            delete cursor;
+            size--;
             return dato;
         }
     }
