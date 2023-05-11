@@ -120,9 +120,9 @@ public:
 int main() {
     Pila<int> yoongi(11);
     cout << "pila original: " << endl;
-    yoongi.push(12);
-    yoongi.push(23);
-    yoongi.push(34);
+    yoongi.push(9);
+    yoongi.push(3);
+    yoongi.push(1993);
     yoongi.print();
     
     cout << "   " << endl;
