@@ -100,6 +100,7 @@ public:
             Nodo<T>* cursor = head;
             head = head->get_next();
             delete cursor; 
+            size--;
             return dato;
         }
         
