@@ -6,7 +6,7 @@ class Nodo{
 private:
     T dato;
     Nodo* next;
-
+ 
 public:
     Nodo(T d){
         dato = d;
