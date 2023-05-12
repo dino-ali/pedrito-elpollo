@@ -16,6 +16,6 @@ void hoshi(){
 
 int main(){
     hoshi();
-
+    
     return 0;
 }
